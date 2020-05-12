@@ -1,1 +1,338 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Mixins, Escaping & Imports */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  padding: 2% 10%;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5rem;
+}
+/* Styling below */
+p {
+  font-size: 1rem;
+}
+h3 {
+  font-size: 3vh;
+}
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+header nav {
+  width: 40%;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header nav ul a {
+  text-decoration: none;
+}
+.main {
+  width: 100%;
+  padding: 6% 4%;
+  background: #f0f0f0;
+  margin: 3% 0;
+  border-radius: 5px;
+}
+.main .portrait {
+  width: 35%;
+}
+.main .portrait .face {
+  width: 100%;
+}
+.main .name {
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+}
+.main .name h1 {
+  font-size: 6vh;
+  margin: 3% 0;
+}
+.main .name h3 {
+  margin-bottom: 3%;
+}
+.statement {
+  width: 100%;
+}
+.statement p {
+  margin: 3% 0;
+}
+.statement button {
+  width: 20%;
+  padding: 1.5% 2%;
+  background: gray;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.aboutme {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.aboutme .about {
+  width: 50%;
+}
+.aboutme .about h2 {
+  font-size: 4.5vh;
+  margin-bottom: 3%;
+}
+.aboutme .about p {
+  padding-right: 5%;
+}
+.aboutme .skills {
+  width: 50%;
+}
+.aboutme .skills h3 {
+  margin-bottom: 3%;
+}
+.aboutme .skills .skill_list {
+  border: 1px solid lightgray;
+}
+.aboutme .skills ul :last-child {
+  border-bottom: 0px;
+}
+.aboutme .skills ul li {
+  border-bottom: 1px solid lightgray;
+  padding: 2%;
+}
+.workhistory {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.workhistory h3 {
+  margin-bottom: 1%;
+}
+.workhistory li {
+  border-bottom: 1px solid lightgray;
+  padding: 1% 0;
+}
+.workhistory .whbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  border-top: 1px solid lightgray;
+}
+.workhistory .whbox .first {
+  width: 100%;
+}
+.workhistory .whbox .first ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.workhistory .whbox .first ul li {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+.workhistory .whbox .second {
+  width: 100%;
+}
+.workhistory .whbox .second ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.workhistory .whbox .second ul li {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+.workhistory .whbox .third {
+  width: 100%;
+}
+.workhistory .whbox .third ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.workhistory .whbox .third ul li {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+.workhistory .whbox .fourth {
+  width: 100%;
+}
+.workhistory .whbox .fourth ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.workhistory .whbox .fourth ul li {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+#lastH2 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  background: #f0f0f0;
+  margin-top: 2%;
+}
+.projects .pjThirds {
+  width: 50%;
+  padding: 0%;
+  text-align: center;
+  margin: 1% 3%;
+}
+.projects .pjThirds img {
+  object-fit: fill;
+  width: 100%;
+  border-radius: 2%;
+}

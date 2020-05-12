@@ -1,4 +1,4 @@
-// Is this working?
+// reset
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -48,12 +48,258 @@ table {
 	border-spacing: 0;
 }
 
+/* Mixins, Escaping & Imports */
+
+.displayflex(@direction, @justify){
+	display:flex;
+	flex-direction:@direction;
+	justify-content:@justify;
+}
+
+.wh() {
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+}
+
+@mobile: ~"(max-width: 500px)";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font: 'Roboto', sans-serif;
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	padding: 2% 10%;
+	font-family: @font;
+	line-height: 1.5rem;
 }
+
+/* Styling below */
+
+p {
+	font-size: 1rem;
+}
+
+h3{
+	font-size: 3vh;
+}
+
+header {
+	width: 100%;
+	.displayflex(row, flex-end);
+
+	nav {
+		width: 40%;
+
+		ul {
+			.displayflex(row, space-between);
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.main {
+	width: 100%;
+	padding: 6% 4%;
+	background: rgb(240, 240, 240);
+	margin: 3% 0;
+	border-radius: 5px;
+
+	.portrait {
+		width: 35%;
+
+		.face {
+			width: 100%;
+		}
+	}
+
+	.name {
+		width: 100%;
+		border-bottom: 1px solid rgb(204, 204, 204);
+
+		h1 {
+			font-size: 6vh;
+			margin: 3% 0;
+		}
+
+		h3 {
+			margin-bottom: 3%;
+		}
+	}
+}
+
+.statement {
+	width: 100%;
+		
+	p{
+		margin: 3% 0;
+	}
+
+	button {
+		width: 20%;
+		padding: 1.5% 2%;
+		background: gray;
+		color: white;
+		border-radius: 5px;
+		font-size: 1.2rem;
+	}
+}
+
+.aboutme {
+	.displayflex(row, start);
+
+	.about {
+		width: 50%;
+	
+		h2 {
+			font-size: 4.5vh;
+			margin-bottom: 3%;
+		}
+
+		p {
+			padding-right: 5%;
+		}
+	}
+
+	.skills {
+		width: 50%;
+
+		h3 {
+			margin-bottom: 3%;
+		}
+
+		.skill_list {
+			border: 1px solid lightgray;
+		}
+
+		ul {
+
+			:last-child{
+				border-bottom: 0px;
+			}
+
+			li {
+				border-bottom: 1px solid lightgray;
+				padding: 2%;
+			}
+		}
+	}
+}
+
+.workhistory {
+	width: 100%;
+	margin: 3% 0;
+	.displayflex(column, start);
+
+	h3 {
+		margin-bottom: 1%;
+	}
+
+	li {
+		border-bottom: 1px solid lightgray;	
+		padding: 1% 0;
+	}
+
+	.whbox {
+		width: 100%;
+		.displayflex(column, start);
+		border-top: 1px solid lightgray;
+
+		.first {
+			width: 100%;
+
+			ul {
+				width: 100%;
+				.displayflex(row, start);
+
+				li {
+					width: 100%;
+					.wh();
+				}
+			}
+		}
+
+		.second {
+			width: 100%;
+
+			ul {
+				width: 100%;
+				.displayflex(row, start);
+
+				li {
+					.wh();
+				}
+			}
+		}
+
+		.third {
+			width: 100%;
+
+			ul {
+				width: 100%;
+				.displayflex(row, start);
+
+				li {
+					.wh();
+				}
+			}
+		}
+
+		.fourth {
+			width: 100%;
+
+			ul {
+				width: 100%;
+				.displayflex(row, start);
+
+				li {
+					.wh();
+				}
+			}
+		}
+	}
+}
+
+#lastH2 {
+	font-size: 1.6rem;
+	text-align: center
+}
+
+.projects {
+	.displayflex(row, center);
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 100%;
+	background: #f0f0f0;
+	margin-top: 2%;
+
+	.pjThirds {
+		width: 50%;
+		padding: 0%;
+		text-align: center;
+		margin: 1% 3%;
+
+		img {
+			object-fit: fill;
+			width: 100%;
+			border-radius: 2%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
 
